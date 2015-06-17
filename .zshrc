@@ -64,6 +64,7 @@ autoload -Uz colors
 #   $vcs_info_msg_2_ : エラーメッセージ用 (赤)
 zstyle ':vcs_info:*' max-exports 3
 zstyle ':vcs_info:*' enable git svn hg bzr
+
 # 標準のフォーマット(git 以外で使用)
 # misc(%m) は通常は空文字列に置き換えられる
 zstyle ':vcs_info:*' formats '(%s)-[%b]'
@@ -79,6 +80,7 @@ if is-at-least 4.3.10; then
     zstyle ':vcs_info:git:*' stagedstr "+"    # %c で表示する文字列
     zstyle ':vcs_info:git:*' unstagedstr "-"  # %u で表示する文字列
 fi
+
 # hooks 設定
 if is-at-least 4.3.11; then
     # git のときはフック関数を設定する
@@ -92,6 +94,7 @@ if is-at-least 4.3.11; then
            git-push-status \
            git-nomerge-branch \
            git-stash-count
+
     # フックの最初の関数
     # git の作業コピーのあるディレクトリのみフック関数を呼び出すようにする
     # (.git ディレクトリ内にいるときは呼び出さない)
@@ -103,6 +106,7 @@ if is-at-least 4.3.11; then
         fi
         return 0
     }
+
     # untracked ファイル表示
     #
     # untracked ファイル(バージョン管理されていないファイル)がある場合は
@@ -119,6 +123,7 @@ if is-at-least 4.3.11; then
             hook_com[unstaged]+='?'
         fi
     }
+
     # push していないコミットの件数表示
     #
     # リモートリポジトリに push していないコミットの件数を
@@ -142,6 +147,7 @@ if is-at-least 4.3.11; then
             hook_com[misc]+="(p${ahead})"
         fi
     }
+
     # マージしていない件数表示
     #
     # master 以外のブランチにいる場合に、
@@ -163,6 +169,7 @@ if is-at-least 4.3.11; then
             hook_com[misc]+="(m${nomerged})"
         fi
     }
+
     # stash 件数表示
     #
     # stash している場合は :SN という形式で misc (%m) に表示
@@ -193,6 +200,7 @@ function _update_vcs_info_msg() {
         [[ -n "$vcs_info_msg_0_" ]] && messages+=( "%F{green}${vcs_info_msg_0_}%f" )
         [[ -n "$vcs_info_msg_1_" ]] && messages+=( "%F{yellow}${vcs_info_msg_1_}%f" )
         [[ -n "$vcs_info_msg_2_" ]] && messages+=( "%F{red}${vcs_info_msg_2_}%f" )
+
         # 間にスペースを入れて連結する
         prompt="${(j: :)messages}"
     fi
