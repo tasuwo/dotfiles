@@ -4,6 +4,7 @@
 [core]
     editor = emacs
     excludesfile = ~/.gitignore
+	trustctime = false
 [include]
     path = ~/.gitconfig_local
 [color]
@@ -21,3 +22,5 @@
     ft = fetch
     mg = merge
     remotes = remote -v
+[push]
+	default = matching

@@ -2,15 +2,6 @@
 
 timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
 
-# ファンクション: ファイル "~/.dotfiles" を作成
-function create_dotdotfiles() {
-    pushd $(dirname $0) >/dev/null
-    echo "create: ${HOME}/.dotfiles (DOTFILES_HOME=$PWD)"
-    echo "export DOTFILES_HOME=$PWD" >$HOME/.dotfiles
-    popd >/dev/null
-    . ${HOME}/.dotfiles
-}
-
 # シンボリックリンクを作成
 # $1: ファイル名
 # $2: リンク先ディレクトリ
@@ -34,7 +25,6 @@ function link_dotfile() {
 }
 
 # メイン処理
-create_dotdotfiles
 if [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
     link_dotfile .minttyrc    $HOME
 fi
