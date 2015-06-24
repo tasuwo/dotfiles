@@ -1,10 +1,18 @@
-#!/bin/bash
-########################################################################################################################
-# インストール
-########################################################################################################################
+#!/bin/sh
 
-set -eu
 timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+
+# OS 判定
+if [ "$(uname)" == 'Darwin' ]; then
+    OS='Mac'
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+    OS='Linux'
+elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
+    OS='Cygwin'
+else
+    echo "Your platform ($(uname -a)) is not supported."
+    exit 1
+fi
 
 # ファンクション: ファイル "~/.dotfiles" を作成
 function create_dotdotfiles() {
@@ -15,16 +23,18 @@ function create_dotdotfiles() {
     . ${HOME}/.dotfiles
 }
 
-# ファンクション: シンボリックリンクを作成, 既存ファイルは退避
+# シンボリックリンクを作成
 # $1: ファイル名
 # $2: リンク先ディレクトリ
 function link_dotfile() {
     file_name=$1
     to_dir=$2
-    from_file=$DOTFILES_HOME/dotfiles/$file_name
+
+    from_file=${PWD}/dot$file_name
     to_file=$to_dir/$file_name
-    backup_dir=$DOTFILES_HOME/backup/${to_dir#/}
-    backup_file=$DOTFILES_HOME/backup/${to_file#/}.$timestamp
+    # バックアップ作成
+    backup_dir=$to_dir/.dot_backup/
+    backup_file=$backup_dir$file_name.$timestamp
     if [ -e $to_file -o -L $to_file ]; then
         echo "move: $to_file => $backup_file"
         mkdir -p $backup_dir
@@ -37,8 +47,11 @@ function link_dotfile() {
 
 # メイン処理
 create_dotdotfiles
+if [OS == 'Cygwin']; then
+    link_dotfile .minttyrc    $HOME
+fi
 link_dotfile .zshrc           $HOME
-link_dotfile .minttyrc        $HOME
 link_dotfile .gitconfig       $HOME
-link_dotfile .gitconfig_local $HOME
 link_dotfile .gitignore       $HOME
+link_dotfile .keysnail.js     $HOME
+echo "Done(˘ω ˘)"
