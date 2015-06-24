@@ -2,18 +2,6 @@
 
 timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
 
-# OS 判定
-if [ "$(uname)" == 'Darwin' ]; then
-    OS='Mac'
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-    OS='Linux'
-elif [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
-    OS='Cygwin'
-else
-    echo "Your platform ($(uname -a)) is not supported."
-    exit 1
-fi
-
 # ファンクション: ファイル "~/.dotfiles" を作成
 function create_dotdotfiles() {
     pushd $(dirname $0) >/dev/null
@@ -47,7 +35,7 @@ function link_dotfile() {
 
 # メイン処理
 create_dotdotfiles
-if [OS == 'Cygwin']; then
+if [ "$(expr substr $(uname -s) 1 10)" == 'MINGW32_NT' ]; then
     link_dotfile .minttyrc    $HOME
 fi
 link_dotfile .zshrc           $HOME
