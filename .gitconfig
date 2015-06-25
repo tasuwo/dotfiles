@@ -4,7 +4,7 @@
 [core]
     editor = emacs
     excludesfile = ~/.gitignore
-	trustctime = false
+    trustctime = false
 [include]
     path = ~/.gitconfig_local
 [color]
@@ -16,11 +16,12 @@
     grep = auto
 [alias]
     st = status
-    cm = commit
+    cm = commit -m
     co = checkout
     df = diff
     ft = fetch
     mg = merge
+    ps = push
     remotes = remote -v
 [push]
-	default = matching
+default = matching
