@@ -9,7 +9,7 @@ function link_dotfile() {
     file_name=$1
     to_dir=$2
 
-    from_file=${PWD}/dot$file_name
+    from_file=${PWD}/$file_name
     to_file=$to_dir/$file_name
     # バックアップ作成
     backup_dir=$to_dir/.dot_backup/
