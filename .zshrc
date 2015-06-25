@@ -49,7 +49,7 @@ function chpwd() {
 
 
 #################
-# Git用設定
+# Git Setting
 #   http://qiita.com/mollifier/items/8d5a627d773758dd8078
 #################
 # vcs_info 設定
@@ -207,6 +207,9 @@ function _update_vcs_info_msg() {
     RPROMPT="$prompt"
 }
 add-zsh-hook precmd _update_vcs_info_msg
+#################
+# Git Setting ends here.
+#################
 
 
 #################
