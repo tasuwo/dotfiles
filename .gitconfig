@@ -16,6 +16,7 @@
     grep = auto
 [alias]
     st = status
+    ad = add
     cm = commit -m
     co = checkout
     df = diff
