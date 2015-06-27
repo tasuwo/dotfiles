@@ -227,7 +227,7 @@ alias ...='cd ../..'
 # .... で3つ上へ移動
 alias ....='cd ../../..'
 # その他の Alias
-alias e='emacs'
+alias e='emacsclient'
 alias g='git'
 
 
