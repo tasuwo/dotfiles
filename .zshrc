@@ -283,8 +283,22 @@ RPROMPT="[%F{yellow}%~%f]"
 
 
 #################
+# Powerline
+#################
+export PATH=$PATH:~/Library/Python/2.7/bin
+powerline-daemon -q
+. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+
+
+#################
 # Antigen
 #################
 if [ -e ~/.antigen/antigen.zsh ]; then
     source ~/.zshrc.antigen
 fi
+
+
+#################
+# インクリメンタル
+#################
+source ~/dotfiles/.zsh/incr*.zsh
