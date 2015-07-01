@@ -7,7 +7,15 @@ $ cd dotfiles
 $ ~/dotfiles/install.sh
 ```
 
+#Antigen
+
+Manage your shell (zsh) plugins, called bundles.
+
+>[zsh-users/antigen](https://github.com/zsh-users/antigen)
+
 #Powerline
+
+##Install
 
 Install python.
 
@@ -32,7 +40,9 @@ If error occured, make `~/.pydistutils.cfg` as follow.
 prefix=
 ```
 
-#Powerline-fonts
+>[tmux - Powerline導入例 - Qiita](http://qiita.com/tkhr/items/8cc17c02dea1803be9c6)
+
+##fonts
 
 Install fonts.
 
