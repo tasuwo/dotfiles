@@ -286,5 +286,5 @@ RPROMPT="[%F{yellow}%~%f]"
 # Antigen
 #################
 if [ -e ~/.antigen/antigen.zsh ]; then
-    source ~/.zsh.antigen
+    source ~/.zshrc.antigen
 fi

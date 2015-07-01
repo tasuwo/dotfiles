@@ -25,6 +25,9 @@ function link_dotfile() {
 }
 
 # メイン処理
+if [ ! -e ~/.antigen ]; then
+    git clone https://github.com/zsh-users/antigen.git ~/.antigen
+fi
 if [ "$(expr substr $(uname -s) 1 10)" == 'CYGWIN_NT-' ]; then
     link_dotfile .minttyrc    $HOME
 fi
