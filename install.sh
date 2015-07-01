@@ -29,6 +29,7 @@ if [ "$(expr substr $(uname -s) 1 10)" == 'CYGWIN_NT-' ]; then
     link_dotfile .minttyrc    $HOME
 fi
 link_dotfile .zshrc           $HOME
+link_dotfile .zshrc.antigen   $HOME
 link_dotfile .gitconfig       $HOME
 link_dotfile .gitignore       $HOME
 link_dotfile .keysnail.js     $HOME

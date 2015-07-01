@@ -280,3 +280,11 @@ colors
 # プロンプトの色
 PROMPT="%F{yellow}[%m:%c %n]$ %f"
 RPROMPT="[%F{yellow}%~%f]"
+
+
+#################
+# Antigen
+#################
+if [ -e ~/.antigen/antigen.zsh ]; then
+    source ~/.zsh.antigen
+fi
