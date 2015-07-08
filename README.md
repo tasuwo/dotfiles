@@ -53,6 +53,10 @@ open fonts
 
 Select and set the favorite font for your terminal.
 
+for windows.
+
+>[Windows7&CygwinでRictyフォント生成 - Qiita](http://qiita.com/ll_kuma_ll/items/97b4fa5af8cde9d74d03)
+
 #Theme
 
 >[chriskempson/tomorrow-theme](https://github.com/chriskempson/tomorrow-theme)
