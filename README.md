@@ -59,4 +59,10 @@ for windows.
 
 #Theme
 
+for Terminal
+
 >[chriskempson/tomorrow-theme](https://github.com/chriskempson/tomorrow-theme)
+
+for Mintty
+
+>[oumu/mintty-color-schemes](https://github.com/oumu/mintty-color-schemes)
