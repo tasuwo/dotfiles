@@ -5,25 +5,18 @@ source ~/.antigen/antigen.zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 # antigen-bundle git
-# antigen-bundle heroku
-# antigen-bundle pip
-# antigen-bundle lein
-# antigen-bundle command-not-found
+antigen-bundle heroku
+antigen-bundle pip
+antigen-bundle lein
+antigen-bundle command-not-found
 
 # Plugin
 # ブックマーク
 antigen bundle jocelynmallon/zshmarks
-# Powerline
-antigen bundle Lokaltog/powerline powerline/bindings/zsh
-# antigen bundle sorin-ionescu/prezto
-
-
-# Syntax highlighting bundle.
+# インクリメンタル
+antigen bundle tarruda/zsh-autosuggestions
+# シンタックスハイライト
 antigen-bundle zsh-users/zsh-syntax-highlighting
-
-# Load the theme.
-# antigen-theme robbyrussell
-# antigen-theme agnoster
 
 # Tell antigen that you're done.
 antigen-apply
