@@ -52,3 +52,7 @@ open fonts
 ```
 
 Select and set the favorite font for your terminal.
+
+#Theme
+
+>[chriskempson/tomorrow-theme](https://github.com/chriskempson/tomorrow-theme)
