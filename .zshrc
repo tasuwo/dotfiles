@@ -282,9 +282,10 @@ colors
 #################
 # Powerline
 #################
-export PATH=$PATH:~/Library/Python/2.7/bin
-powerline-daemon -q
-. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+export TERM="xterm-256color"
+#export PATH=$PATH:~/Library/Python/2.7/bin
+#powerline-daemon -q
+#. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
 
 #################

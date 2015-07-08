@@ -1,14 +1,11 @@
 source ~/.antigen/antigen.zsh
 
-# Load the oh-my-zsh's library.
-# antigen-use oh-my-zsh
-
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 # antigen-bundle git
-antigen-bundle heroku
-antigen-bundle pip
-antigen-bundle lein
-antigen-bundle command-not-found
+# antigen-bundle heroku
+# antigen-bundle pip
+# antigen-bundle lein
+# antigen-bundle command-not-found
 
 # Plugin
 # ブックマーク
@@ -16,7 +13,12 @@ antigen bundle jocelynmallon/zshmarks
 # インクリメンタル
 antigen bundle tarruda/zsh-autosuggestions
 # シンタックスハイライト
-antigen-bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
+# Theme
+## Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+## Theme
+antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
 # Tell antigen that you're done.
 antigen-apply
