@@ -4,7 +4,7 @@
 [core]
     editor = emacs
     excludesfile = ~/.gitignore
-    trustctime = false
+	trustctime = false
 [include]
     path = ~/.gitconfig_local
 [color]
