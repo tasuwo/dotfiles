@@ -234,6 +234,8 @@ alias bk='bookmark'
 alias sb='showmarks'
 alias db='deletemark'
 alias j='jump'
+# cd-gitroot
+alias cdu='cd-gitroot'
 
 
 #################

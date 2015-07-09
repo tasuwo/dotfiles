@@ -20,6 +20,8 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 # Git
 # antigen-bundle arialdomartini/oh-my-git
 # antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
+# Gitのホームディレクトリに移動
+antigen bundle mollifier/cd-gitroot
 # Theme
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
