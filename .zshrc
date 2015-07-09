@@ -229,6 +229,11 @@ alias ....='cd ../../..'
 # その他の Alias
 alias e='emacsclient -nw -a '\'''\'''
 alias g='git'
+# zshmarks
+alias bk='bookmark'
+alias sb='showmarks'
+alias db='deletemark'
+alias j='jump'
 
 
 #################
