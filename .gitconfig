@@ -24,5 +24,6 @@
     mg = merge
     ps = push
     remotes = remote -v
+    tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
 [push]
 default = matching
