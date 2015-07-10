@@ -27,6 +27,10 @@ zstyle ':completion:*:default' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 補完候補に色を付ける
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+## 補完候補がなければより曖昧に候補を探す。
+### m:{a-z}={A-Z}: 小文字を大文字に変えたものでも補完する。
+### r:|[._-]=*: 「.」「_」「-」の前にワイルドカード「*」があるものとして補完する。
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
 # emacs モードで使用
 bindkey -e
 
