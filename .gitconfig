@@ -17,6 +17,7 @@
 [alias]
     st = status
     ad = add
+    ai = add -i
     cm = commit -m
     co = checkout
     df = diff
