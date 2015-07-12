@@ -15,16 +15,18 @@
     interactive = auto
     grep = auto
 [alias]
-    st = status
-    ad = add
-    ai = add -i
-    cm = commit -m
-    co = checkout
-    df = diff
-    ft = fetch
-    mg = merge
-    ps = push
+    st  = status
+    ad  = add
+    ai  = add -i
+    cm  = commit -m
+    cma = commit -a -m
+    co  = checkout
+    df  = diff
+    ft  = fetch
+    mg  = merge
+    ps  = push
+    br  = branch
     remotes = remote -v
-    tr = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+    tr = log --graph --branches --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
 [push]
 default = matching
