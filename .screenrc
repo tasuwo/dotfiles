@@ -1,7 +1,25 @@
 # command key
 escape ^Qq
 
+# status bar
 hardstatus alwayslastline "%y/%m/%d(%D) [%02c]  %`%-w%{=b bw}%n %t%{-}%+w"
+
+# copy mode key-bind
+# 基本的なキーバインド
+markkeys h=^b:l=^f:0=^a:j=^n:k=^p:$=^e:^d=^v
+bindkey -m ^[v stuff P
+bindkey -m ^[< stuff g
+bindkey -m ^[> stuff G
+bindkey -m ^[b stuff B
+bindkey -m ^[f stuff E
+# 行末までコピーする(C-k)
+bindkey -m ^k stuff ' $ '
+# C-g コピーモード終了
+bindkey -m ^g stuff !
+# Xclip を使って、 X のクリップボードへ
+# Space で選択開始、 M-w (または M-W) でコピー
+bindkey -m ^[w eval 'msgwait 0' 'stuff \040' writebuf 'exec !!! xclip /tmp/screen-exchange' 'msgwait 1'
+bindkey -m ^[W eval 'msgwait 0' 'stuff \040' writebuf 'exec !!! xclip /tmp/screen-exchange' 'msgwait 1']]]]]]]
 
 # operate regions like emacs
 bind x command -c REGION
