@@ -1,10 +1,13 @@
+# command key
+escape ^Qq
+
 # operate regions like emacs
-bind x command -c escape-x-map
-bind -c escape-x-map 2 split
-bind -c escape-x-map 3 split -v
-bind -c escape-x-map o focus
-bind -c escape-x-map 1 only
-bind -c escape-x-map 0 remove
-bind -c escape-x-map } resize +10
-bind -c escape-x-map { resize -10
-bind -c escape-x-map + resize =}
+bind x command -c REGION
+bind -c REGION 2 split
+bind -c REGION 3 split -v
+bind -c REGION o focus
+bind -c REGION 1 only
+bind -c REGION 0 remove
+bind -c REGION } resize +10
+bind -c REGION { resize -10
+bind -c REGION + resize =}
