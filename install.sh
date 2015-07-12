@@ -36,4 +36,5 @@ link_dotfile .zshrc.antigen   $HOME
 link_dotfile .gitconfig       $HOME
 link_dotfile .gitignore       $HOME
 link_dotfile .keysnail.js     $HOME
+link_dotfile .screenrc        $HOME
 echo "Done!"
