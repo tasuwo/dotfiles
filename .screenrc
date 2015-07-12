@@ -1,6 +1,8 @@
 # command key
 escape ^Qq
 
+hardstatus alwayslastline "%y/%m/%d(%D) [%02c]  %`%-w%{=b bw}%n %t%{-}%+w"
+
 # operate regions like emacs
 bind x command -c REGION
 bind -c REGION 2 split
