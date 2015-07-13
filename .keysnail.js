@@ -64,7 +64,6 @@ key.suspendKey           = "<f2>";
 
 // ================================= Hooks ================================= //
 
-
 hook.setHook('KeyBoardQuit', function (aEvent) {
     if (key.currentKeySequence.length) return;
 
@@ -89,7 +88,6 @@ hook.setHook('KeyBoardQuit', function (aEvent) {
         key.generateKey(aEvent.originalTarget, KeyEvent.DOM_VK_ESCAPE, true);
     }
 });
-
 
 // ============================= Key bindings ============================== //
 
@@ -157,6 +155,10 @@ key.setGlobalKey(['C-x', 'C-s'], function (ev) {
     saveDocument(window.content.document);
 }, 'ファイルを保存', true);
 
+key.setGlobalKey(['C-x', 'n'], function (ev) {
+    BrowserOpenTab();
+}, 'タブを開く');
+
 key.setGlobalKey('C-s', function (ev) {
     command.iSearchForwardKs(ev);
 }, 'Emacs ライクなインクリメンタル検索', true);
@@ -201,7 +203,7 @@ key.setViewKey(['C-c', 'C-e'], function (aEvent, aArg) {
     ext.exec("hok-start-continuous-mode", aArg);
 }, 'リンクを連続して開く Hit a Hint を開始', true);
 
-key.setViewKey('A', function (ev, arg) {
+key.setViewKey('T', function (ev, arg) {
                    ext.exec("tanything", arg);
                }, 'タブを一覧表示', true);
 
@@ -519,7 +521,3 @@ key.setCaretKey('M-p', function (ev) {
 key.setCaretKey('M-n', function (ev) {
     command.walkInputElement(command.elementsRetrieverButton, false, true);
 }, '前のボタンへフォーカスを当てる');
-
-key.setGlobalKey(['C-x', 'n'], function (ev) {
-    BrowserOpenTab();
-}, 'タブを開く');
