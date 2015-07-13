@@ -239,8 +239,8 @@ alias sb='showmarks'
 alias db='deletemark'
 alias j='jump'
 # cd-gitroot
-alias cdu='cd-gitroot'
-
+alias cu='cd-gitroot'
+alias c='cd'
 
 #################
 # 履歴
