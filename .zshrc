@@ -226,6 +226,8 @@ function chpwd() {
 alias ls='ls -G -p'
 alias la='ls -G -p -a'
 alias ll='ls -G -p -l'
+alias l1='ls -G -1 -p'
+alias l1a='ls -G -1 -a -p'
 # ... で2つ上移動
 alias ...='cd ../..'
 # .... で3つ上へ移動
