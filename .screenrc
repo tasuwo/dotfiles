@@ -4,6 +4,9 @@ escape ^Qq
 # status bar
 hardstatus alwayslastline "%y/%m/%d(%D) [%02c]  %`%-w%{=b bw}%n %t%{-}%+w"
 
+# default shell
+shell zsh
+
 # copy mode key-bind
 # 基本的なキーバインド
 markkeys h=^b:l=^f:0=^a:j=^n:k=^p:$=^e:^d=^v
