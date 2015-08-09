@@ -27,18 +27,18 @@ pip --version
 
 If the version isn't 2.7, you need to modify the path written in `.zshrc`.
 
-Install powerline.
+<!-- Install powerline. -->
 
-```bash
-pip install --user powerline-status
-```
+<!-- ```bash -->
+<!-- pip install --user powerline-status -->
+<!-- ``` -->
 
-If error occured, make `~/.pydistutils.cfg` as follow.
+<!-- If error occured, make `~/.pydistutils.cfg` as follow. -->
 
-```bash
-[install]
-prefix=
-```
+<!-- ```bash -->
+<!-- [install] -->
+<!-- prefix= -->
+<!-- ``` -->
 
 >[tmux - Powerline導入例 - Qiita](http://qiita.com/tkhr/items/8cc17c02dea1803be9c6)
 
