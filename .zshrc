@@ -35,12 +35,17 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
 bindkey -e
 
 
+
 #################
 # cd強化
 #################
 # cd先をディレクトリスタックに自動追加
 # `cd + <Tsb>` で履歴に移動
+DIRSTACKSIZE=100
 setopt auto_pushd
+zstyle ':completion:*' menu select
+zstyle ':completion:*:cd:*' ignore-parents parent pwd
+zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
 # ディレクトリが既にスタックに積まれていれば，追加しない
 setopt pushd_ignore_dups
 # 入力コマンドが存在せず，かつディレクトリ名と一致するなら cd
