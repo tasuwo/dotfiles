@@ -65,3 +65,7 @@ $RECYCLE.BIN/
 *.log
 .cache/
 *.autosave
+
+## Jetbtans ##
+.idea/
+*.iml
