@@ -159,3 +159,4 @@ export TERM="xterm-256color"
 if [ -e ~/.antigen/antigen.zsh ]; then
     source ~/.zshrc.antigen
 fi
+if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
