@@ -28,6 +28,9 @@ function link_dotfile() {
 if [ ! -e ~/.antigen ]; then
     git clone https://github.com/zsh-users/antigen.git ~/.antigen
 fi
+if [ ! -e ~/.tmux/plugins/tpm ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 if [ "$(expr substr $(uname -s) 1 10)" == 'CYGWIN_NT-' ]; then
     link_dotfile .minttyrc    $HOME
 fi
@@ -37,4 +40,5 @@ link_dotfile .gitconfig       $HOME
 link_dotfile .gitignore       $HOME
 link_dotfile .keysnail.js     $HOME
 link_dotfile .screenrc        $HOME
+link_dotfile .tmux.conf       $HOME
 echo "Done!"
