@@ -2,7 +2,7 @@
 # .gitconfig
 #
 [core]
-    editor = emacs
+    editor = vim
     excludesfile = ~/.gitignore
 	trustctime = false
 [include]
