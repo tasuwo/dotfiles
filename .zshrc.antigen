@@ -25,5 +25,13 @@ antigen bundle mollifier/cd-gitroot
 # Theme
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  dir
+  status
+  git
+  cmd_exec_time
+)
+
 # Tell antigen that you're done.
 antigen-apply
