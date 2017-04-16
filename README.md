@@ -1,4 +1,4 @@
-#Install
+# Install
 
 ```
 $ cd $HOME
@@ -7,15 +7,15 @@ $ cd dotfiles
 $ ~/dotfiles/install.sh
 ```
 
-#Antigen
+# Antigen
 
 Manage your shell (zsh) plugins, called bundles.
 
 >[zsh-users/antigen](https://github.com/zsh-users/antigen)
 
-#Powerline
+# Powerline
 
-##Install
+## Install
 
 Install python.
 
@@ -42,22 +42,22 @@ If the version isn't 2.7, you need to modify the path written in `.zshrc`.
 
 >[tmux - Powerline導入例 - Qiita](http://qiita.com/tkhr/items/8cc17c02dea1803be9c6)
 
-##fonts
+## fonts
 
-Install fonts.
+Install Ricty Font.
 
+``` shell
+$ brew tap sanemat/font
+$ brew reinstall --with-powerline ricty
+$ cp -f /usr/local/opt/ricty/share/fonts/Ricty*.ttf ~/Library/Fonts/
+$ fc-cache -vf
 ```
-git clone git@github.com:powerline/fonts.git
-open fonts
-```
-
-Select and set the favorite font for your terminal.
 
 for windows.
 
 >[Windows7&CygwinでRictyフォント生成 - Qiita](http://qiita.com/ll_kuma_ll/items/97b4fa5af8cde9d74d03)
 
-#Theme
+# Theme
 
 for Terminal
 
