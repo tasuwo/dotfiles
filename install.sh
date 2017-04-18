@@ -41,4 +41,6 @@ link_dotfile .gitignore       $HOME
 link_dotfile .keysnail.js     $HOME
 link_dotfile .screenrc        $HOME
 link_dotfile .tmux.conf       $HOME
+link_dotfile .eslintrc        $HOME
+link_dotfile .tern-config     $HOME
 echo "Done!"
