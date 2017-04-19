@@ -66,3 +66,10 @@ for Terminal
 for Mintty
 
 >[oumu/mintty-color-schemes](https://github.com/oumu/mintty-color-schemes)
+
+# for tmux
+
+``` shell
+$ brew install tmux
+$ brew install reattach-to-user-namespace
+```
