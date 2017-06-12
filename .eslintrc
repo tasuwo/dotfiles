@@ -2,7 +2,11 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jquery": {
+      "$": false,
+      "jQuery": false
+    },
   },
   "extends": "eslint:recommended",
   "plugins": [
@@ -16,5 +20,6 @@
     "sourceType": "module"
   },
   "rules": {
+    "no-console": 0,
   },
 }
