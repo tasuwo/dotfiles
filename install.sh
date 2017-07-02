@@ -43,4 +43,6 @@ link_dotfile .screenrc        $HOME
 link_dotfile .tmux.conf       $HOME
 link_dotfile .eslintrc        $HOME
 link_dotfile .tern-config     $HOME
+link_dotfile .xvimrc          $HOME
+link_dotfile .vimrc           $HOME
 echo "Done!"
