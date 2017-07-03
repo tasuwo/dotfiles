@@ -74,6 +74,7 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 # その他の Alias
 alias e='emacsclient -nw -a '\'''\'''
+alias ek='emacsclient -e "(kill-emacs)"'
 alias g='git'
 # zshmarks
 alias bk='bookmark'
