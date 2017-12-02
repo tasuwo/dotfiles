@@ -14,8 +14,9 @@ set wildmenu
 set whichwrap=b,s,h,l,<,>,[,]
 
 " Encoding
-set encoding=utf-8
-set fileencodings=iso-2022-jp,utf-8,cp932,euc-jp,default,latin
+set encoding=utf8
+set fenc=utf-8
+"set fencs=iso-2022-jp,euc-jp,cp932
 
 " Indent
 set autoindent

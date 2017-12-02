@@ -45,4 +45,5 @@ link_dotfile .eslintrc        $HOME
 link_dotfile .tern-config     $HOME
 link_dotfile .xvimrc          $HOME
 link_dotfile .vimrc           $HOME
+link_dotfile .ideavimrc       $HOME
 echo "Done!"
