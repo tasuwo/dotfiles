@@ -38,6 +38,7 @@ link_dotfile .zshrc           $HOME
 link_dotfile .zshrc.antigen   $HOME
 link_dotfile .gitconfig       $HOME
 link_dotfile .gitignore       $HOME
+link_dotfile .gitmessage      $HOME
 link_dotfile .keysnail.js     $HOME
 link_dotfile .screenrc        $HOME
 link_dotfile .tmux.conf       $HOME

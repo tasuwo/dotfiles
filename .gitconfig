@@ -4,7 +4,9 @@
 [core]
     editor = vim
     excludesfile = ~/.gitignore
-	trustctime = false
+    trustctime = false
+[commit]
+    template = ~/.gitmessage
 [include]
     path = ~/.gitconfig_local
 [color]
@@ -31,7 +33,7 @@
 [push]
 default = matching
 [http]
-	proxy = 
+    proxy = 
 [user]
-	name = tasuwo
-	email = kamuhata.you@gmail.com
+    name = tasuwo
+    email = kamuhata.you@gmail.com
