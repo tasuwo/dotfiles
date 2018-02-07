@@ -34,6 +34,3 @@
 default = matching
 [http]
     proxy = 
-[user]
-    name = tasuwo
-    email = kamuhata.you@gmail.com
