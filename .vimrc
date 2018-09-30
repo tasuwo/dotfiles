@@ -72,7 +72,9 @@ hi clear CursorLine
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L
 
 " Keymap
-inoremap <silent> jj <ESC>
+" inoremap <silent> jj <ESC>
+imap jj <Esc>
+" imap jk <Esc>
 
 " Spell
 filetype plugin indent on

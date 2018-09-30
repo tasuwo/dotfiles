@@ -47,4 +47,12 @@ link_dotfile .tern-config     $HOME
 link_dotfile .xvimrc          $HOME
 link_dotfile .vimrc           $HOME
 link_dotfile .ideavimrc       $HOME
+XCODE_KEYBIND_SETTING_DIR="${HOME}/Library/Developer/Xcode/UserData/KeyBindings"
+if [ -d "$XCODE_KEYBIND_SETTING_DIR" ]; then
+    link_dotfile tasuwo.idekeybindings $XCODE_KEYBIND_SETTING_DIR
+fi
+CONFIG_DIR="${HOME}/.config"
+ln -s ${PWD}/karabiner ${CONFIG_DIR}
+launchctl kickstart -k gui/`id -u`/org.pqrs.karabiner.karabiner_console_user_server
+
 echo "Done!"

@@ -1,11 +1,15 @@
 
 # ==== Emojis ====
-# 🌱  :seedling: Initial commit
+# 🌱 :seedling: Initial commit
 # ✨ :sparkles: A new feature
-# 🐛  :bug: A bug fix
-# 📚  :books: Documentation only changes
-# 🎨  :art: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-# 🔨  :hammer: A code change that neither fixes a bug nor adds a feature
-# 🚀  :rocket: A code change that improves performance
+# 🐛 :bug: A bug fix
+# 📚 :books: Documentation only changes
+# 🎨 :art: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+# 🔨 :hammer: A code change that neither fixes a bug nor adds a feature
+# 🚀 :rocket: A code change that improves performance
 # ✅ :white_check_mark: Adding missing or correcting existing tests
-# 🔧  :wrench: Changes to the build process or auxiliary tools and libraries such as documentation generation
+# 🔧 :wrench: Changes to the build process or auxiliary tools and libraries such as documentation generation
+# ⬆️ :arrow_up: Update dependencies
+# ⬇️ :arrow_down: Downgrade dependencies
+# 🚧 :construction: Work in progress
+# 💃 :dancer: UI/UX
