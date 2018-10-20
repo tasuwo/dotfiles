@@ -4,7 +4,6 @@
 # rm でゴミ箱へ...
 alias rm='rmtrash'
 
-
 ####################
 # 環境変数
 ####################
@@ -18,7 +17,6 @@ export LS_COLORS='di=36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 # 履歴の件数を増やす
 export HISTSIZE=5000
-
 
 #################
 # 基本設定
@@ -35,10 +33,6 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 ### m:{a-z}={A-Z}: 小文字を大文字に変えたものでも補完する。
 ### r:|[._-]=*: 「.」「_」「-」の前にワイルドカード「*」があるものとして補完する。
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
-# emacs モードで使用
-bindkey -e
-
-
 
 #################
 # cd強化
@@ -110,7 +104,6 @@ setopt bang_hist
 # プロセス間で履歴を共有
 setopt share_history
 
-
 #################
 # 補完
 #################
@@ -125,10 +118,9 @@ setopt list_packed
 # 一覧でファイルの種別をマーク表示
 setopt list_types
 # Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
-bindkey "^[[Z" reverse-menu-complete
+# bindkey "^[[Z" reverse-menu-complete
 # 補完時に大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
 
 #################
 # fuck
@@ -163,6 +155,7 @@ export TERM="xterm-256color"
 #powerline-daemon -q
 #. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
+setopt nonomatch
 
 #################
 # Antigen
@@ -171,3 +164,45 @@ if [ -e ~/.antigen/antigen.zsh ]; then
     source ~/.zshrc.antigen
 fi
 if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
+
+
+##################
+# Zsh Line Editor
+# https://qiita.com/b4b4r07/items/8db0257d2e6f6b19ecb9
+# https://github.com/b4b4r07/zle-vimode/blob/master/zle-vimode.zsh
+##################
+# vim モードで使用
+bindkey -v
+# Merge emacs mode to viins mode
+bindkey -M viins '\er' history-incremental-pattern-search-forward
+bindkey -M viins '^?'  backward-delete-char
+bindkey -M viins '^A'  beginning-of-line
+bindkey -M viins '^B'  backward-char
+bindkey -M viins '^D'  delete-char-or-list
+bindkey -M viins '^E'  end-of-line
+bindkey -M viins '^F'  forward-char
+bindkey -M viins '^G'  send-break
+bindkey -M viins '^H'  backward-delete-char
+bindkey -M viins '^K'  kill-line
+bindkey -M viins '^N'  down-line-or-history
+bindkey -M viins '^P'  up-line-or-history
+bindkey -M viins '^R'  history-incremental-pattern-search-backward
+bindkey -M viins '^U'  backward-kill-line
+bindkey -M viins '^W'  backward-kill-word
+bindkey -M viins '^Y'  yank
+# Helper function
+# use bindkey -l
+has_keymap() {
+    if [[ -z $1 ]]; then
+        return 1
+    fi
+    bindkey -l "$1" >/dev/null 2>&1
+    return $?
+}
+# Easy to escape
+bindkey -M viins 'jj' vi-cmd-mode
+has_keymap "vivis" && bindkey -M vivis 'jj' vi-visual-exit
+# Make more vim-like behaviors
+bindkey -M vicmd 'gg' beginning-of-line
+bindkey -M vicmd 'G'  end-of-line
+

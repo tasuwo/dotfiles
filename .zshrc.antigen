@@ -34,4 +34,4 @@ BULLETTRAIN_PROMPT_ORDER=(
 )
 
 # Tell antigen that you're done.
-antigen-apply
+antigen apply
