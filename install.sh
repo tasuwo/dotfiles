@@ -48,6 +48,7 @@ link_dotfile .xvimrc          $HOME
 link_dotfile .vimrc           $HOME
 link_dotfile .ideavimrc       $HOME
 link_dotfile .vrapperrc       $HOME
+link_dotfile .alacritty.yml   $HOME
 XCODE_KEYBIND_SETTING_DIR="${HOME}/Library/Developer/Xcode/UserData/KeyBindings"
 if [ -d "$XCODE_KEYBIND_SETTING_DIR" ]; then
     link_dotfile tasuwo.idekeybindings $XCODE_KEYBIND_SETTING_DIR
