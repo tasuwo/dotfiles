@@ -136,16 +136,7 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": false,
-                    "simple_modifications": [
-                        {
-                            "from": {
-                                "key_code": "caps_lock"
-                            },
-                            "to": {
-                                "key_code": "left_control"
-                            }
-                        }
-                    ]
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [

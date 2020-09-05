@@ -1,15 +1,37 @@
 
-# ==== Emojis ====
-# 🌱 :seedling: Initial commit
-# ✨ :sparkles: A new feature
-# 🐛 :bug: A bug fix
-# 📚 :books: Documentation only changes
-# 🎨 :art: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-# 🔨 :hammer: A code change that neither fixes a bug nor adds a feature
-# 🚀 :rocket: A code change that improves performance
-# ✅ :white_check_mark: Adding missing or correcting existing tests
-# 🔧 :wrench: Changes to the build process or auxiliary tools and libraries such as documentation generation
-# ⬆️ :arrow_up: Update dependencies
-# ⬇️ :arrow_down: Downgrade dependencies
-# 🚧 :construction: Work in progress
-# 💃 :dancer: UI/UX
+
+# Emojis
+#
+# 🎉 :tada:             Initial commit.
+# ✨ :sparkles:         A new feature.
+# 🐛 :bug:              Fix a bug.
+# 🎨 :art:              Improve structure / format of the code.
+# 🚀 :rocket:           Deploying stuff.
+# ⚡️ :zap:              Improve performance.
+# 🔨 :hammer:           Add or update build scripts.
+# 🔧 :wrench:           Add or update configuration files.
+# ♻️ :recycle:           Refactor code.
+# 🔥 :fire:             Removing code / files.
+# 💄 :lipstick:         Add or update th UI and style files.
+# 💫 :dizzy:            Adding or updating animations and transitions.
+# ✏️ :pencil2:           Fix typos.
+# 📝 :pencil:           Write docs.
+# 🙈 :see_no_evil:      Add or update .gitignore file.
+# 💡 :bulb:             Add or update comments in source code.
+# 🍱 :bento:            Add or update assets.
+# 🚚 :truck:            Move or rename resources (e.g.: files, paths, routes)
+# ➕ :heavy_plus_sign:  Add a dependency.
+# ➖ :heavy_minus_sign: Remove a dependency.
+# ⬆️ :arrow_up:          Update dependencies.
+# ⬇️ :arrow_down:        Downgrade dependencies.
+# 🚨 :rotating_light:   Remove linter warnings.
+# ✅ :white_check_mark: Add or update tests.
+# 💚 :green_heart:      Fix CI Build.
+# 🚧 :construction:     Work in progress.
+# 🍻 :beers:            Writing code drunkenly.
+
+# Inspired
+#
+# > https://gitmoji.carloscuesta.me
+# > https://gist.github.com/parmentf/035de27d6ed1dce0b36a
+
