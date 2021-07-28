@@ -34,3 +34,5 @@
 default = matching
 [http]
     proxy = 
+[init]
+	defaultBranch = main
