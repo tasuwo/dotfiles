@@ -1,9 +1,5 @@
 # .zshrc
 
-
-# rm でゴミ箱へ...
-alias rm='rmtrash'
-
 ####################
 # 環境変数
 ####################
@@ -121,11 +117,6 @@ setopt list_types
 # bindkey "^[[Z" reverse-menu-complete
 # 補完時に大文字小文字を区別しない
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-#################
-# fuck
-#################
-eval "$(thefuck --alias)"
 
 
 #################
