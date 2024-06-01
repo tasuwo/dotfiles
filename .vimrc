@@ -16,7 +16,6 @@ set whichwrap=b,s,h,l,<,>,[,]
 " Encoding
 set encoding=utf8
 set fenc=utf-8
-"set fencs=iso-2022-jp,euc-jp,cp932
 
 " Indent
 set autoindent
@@ -72,9 +71,7 @@ hi clear CursorLine
 set statusline=%<%f\ %m\ %r%h%w%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=\ (%v,%l)/%L
 
 " Keymap
-" inoremap <silent> jj <ESC>
 imap jj <Esc>
-" imap jk <Esc>
 
 " Spell
 filetype plugin indent on
@@ -87,4 +84,3 @@ au BufNewFile,BufRead Gymfile set ft=ruby
 au BufNewFile,BufRead Matchfile set ft=ruby
 au BufNewFile,BufRead Snapfile set ft=ruby
 au BufNewFile,BufRead Scanfile set ft=ruby
-

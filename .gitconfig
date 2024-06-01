@@ -1,14 +1,15 @@
-#
-# .gitconfig
-#
 [core]
     editor = vim
     excludesfile = ~/.gitignore
     trustctime = false
+    untrackedCache = true
+
 [commit]
     template = ~/.gitmessage
+
 [include]
     path = ~/.gitconfig_local
+
 [color]
     ui = auto
     diff = auto
@@ -16,6 +17,7 @@
     branch = auto
     interactive = auto
     grep = auto
+
 [alias]
     st  = status
     ad  = add
@@ -30,9 +32,9 @@
     br  = branch
     remotes = remote -v
     tr = log --graph --branches --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
+
 [push]
-default = matching
-[http]
-    proxy = 
+    default = matching
+
 [init]
-	defaultBranch = main
+    defaultBranch = main

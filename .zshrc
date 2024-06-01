@@ -1,8 +1,6 @@
-# .zshrc
-
-####################
+#
 # 環境変数
-####################
+#
 # 文字コード設定
 export LC_ALL="en_US.UTF-8"
 # ls したときの色の設定
@@ -12,47 +10,55 @@ export LS_COLORS='di=36:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg
 # 履歴にタイムスタンプ追加
 export HISTTIMEFORMAT="%y/%m/%d %H:%M:%S: "
 # 履歴の件数を増やす
-export HISTSIZE=5000
+export HISTSIZE=500
 
-#################
-# 基本設定
-#################
-# <Tab>による補完機能を利用する
-autoload -U compinit
-compinit
+#
+# 音
+#
+# 音は鳴らさない
+unsetopt BEEP
+
+#
+# 補完
+#
+# 補完機能を有効にする
+autoload -Uz compinit && compinit
+# 補完候補をメニュー形式で表示
 zstyle ':completion:*:default' menu select
 # 大文字，小文字を区別せずに補完
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# 部分一致を有効にする
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' 'r:|[._-]=**'
+# 補完候補に説明を表示
+zstyle ':completion:*:descriptions' format '%B%d%b'
+# ディレクトリ名の補完を有効にし、階層を表示する
+zstyle ':completion:*:*:(all-|)files' file-sort name
 # 補完候補に色を付ける
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 ## 補完候補がなければより曖昧に候補を探す。
 ### m:{a-z}={A-Z}: 小文字を大文字に変えたものでも補完する。
 ### r:|[._-]=*: 「.」「_」「-」の前にワイルドカード「*」があるものとして補完する。
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z} r:|[._-]=*'
+# ヒストリ補完を有効にする
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+# 補完候補一覧表示
+setopt auto_list
+# 候補をTABで順に切り替え
+setopt auto_menu
+# 補完候補を詰めて表示
+setopt list_packed
+# 一覧でファイルの種別をマーク表示
+setopt list_types
 
-#################
-# cd強化
-#################
-# cd先をディレクトリスタックに自動追加
-# `cd + <Tsb>` で履歴に移動
-DIRSTACKSIZE=100
-setopt auto_pushd
-zstyle ':completion:*' menu select
-zstyle ':completion:*:cd:*' ignore-parents parent pwd
-zstyle ':completion:*:descriptions' format '%BCompleting%b %U%d%u'
-# ディレクトリが既にスタックに積まれていれば，追加しない
-setopt pushd_ignore_dups
-# 入力コマンドが存在せず，かつディレクトリ名と一致するなら cd
-setopt auto_cd
-# cdしたら自動でlsする
-function chpwd() {
-  [[ $JUST_BEFORE_PWD != $PWD ]] && ls
-   JUST_BEFORE_PWD=$PWD
-}
+#
+# 色
+#
+autoload -U colors && colors
 
-#################
+#
 # Alias
-#################
+#
 # -p : ディレクトリの最後に`\`を付加
 # -G : 結果を色付きで表示
 # -a : ドットファイルを含んだ全てのファイルを表示
@@ -62,26 +68,18 @@ alias la='ls -G -p -a'
 alias ll='ls -G -p -l'
 alias l1='ls -G -1 -p'
 alias l1a='ls -G -1 -a -p'
+# .. で1つ上移動
+alias ..='cd ..'
 # ... で2つ上移動
 alias ...='cd ../..'
 # .... で3つ上へ移動
 alias ....='cd ../../..'
 # その他の Alias
-alias e='emacsclient -nw -a '\'''\'''
-alias ek='emacsclient -e "(kill-emacs)"'
 alias g='git'
-# zshmarks
-alias bk='bookmark'
-alias sb='showmarks'
-alias db='deletemark'
-alias j='jump'
-# cd-gitroot
-alias cu='cd-gitroot'
-alias c='cd'
 
-#################
+#
 # 履歴
-#################
+#
 # history コマンドで見れる履歴関連
 # 保存ファイル
 HISTFILE=~/.zsh_history
@@ -89,82 +87,57 @@ HISTFILE=~/.zsh_history
 HISTSIZE=5000
 # ファイルへの保存数
 SAVEHIST=5000
-# 実行時間を保存
-setopt extended_history
 # 直前と同じコマンドは保存しない
 setopt hist_ignore_dups
 # 余分なスペースは削除して保存
 setopt hist_reduce_blanks
-# !を使って直前のコマンド実行を展開
-setopt bang_hist
 # プロセス間で履歴を共有
 setopt share_history
 
-#################
-# 補完
-#################
-autoload -Uz compinit
-compinit -u
-# 補完候補一覧表示
-setopt auto_list
-# 候補をTABで順に切り替え
-setopt auto_menu
-# 補完候補を詰めて表示
-setopt list_packed
-# 一覧でファイルの種別をマーク表示
-setopt list_types
-# Shift-Tabで補完候補を逆順する("\e[Z"でも動作する)
-# bindkey "^[[Z" reverse-menu-complete
-# 補完時に大文字小文字を区別しない
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-
-
-#################
-# rbenv
-#################
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-
-#################
-# pyenv
-#################
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-
-
-#################
-# 色
-#################
-autoload colors
-colors
-
-
-#################
-# Powerline
-#################
-export TERM="xterm-256color"
-#export PATH=$PATH:~/Library/Python/2.7/bin
-#powerline-daemon -q
-#. ~/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
-
-setopt nonomatch
-
-#################
-# Antigen
-#################
-if [ -e ~/.antigen/antigen.zsh ]; then
-    source ~/.zshrc.antigen
-fi
-if which swiftenv > /dev/null; then eval "$(swiftenv init -)"; fi
-
-
-##################
-# Zsh Line Editor
-# https://qiita.com/b4b4r07/items/8db0257d2e6f6b19ecb9
-# https://github.com/b4b4r07/zle-vimode/blob/master/zle-vimode.zsh
-##################
-# vim モードで使用
+#
+# Vim mode
+#
 bindkey -v
-# Merge emacs mode to viins mode
+
+#
+# Prompt
+#
+# - %F{color}-%f: テキスト色
+# - %B-%b: 太字
+# - %n: ユーザ名
+# - %m: マシン名
+# - vcs_info_msg_0_: ブランチ名。vcs_infoによって設定される
+#
+# Git情報取得のための関数をロードする
+autoload -Uz vcs_info
+# プロンプト設定内でのコマンド置換、変数展開を有効にする
+setopt prompt_subst
+# Gitリポジトリの変更監視
+zstyle ':vcs_info:git:*' check-for-changes true
+# ステージングエリアに変更がある場合は!を表示
+zstyle ':vcs_info:git:*' stagedstr "%F{green}+"
+# ステージングされていない変更がある場合は+を表示
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}!"
+# プロンプトのフォーマット
+# - %c: ステージングされた変更
+# - %u: ステージングされていない変更
+# - %b: ブランチ名
+zstyle ':vcs_info:*' formats "[%b]%c%u"
+# プロンプトのアクション時(リベース/マージ時等)のフォーマット
+# - %b: ブランチ名
+# - %a: VCSアクション名
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+# プロンプト表示の度に実行される関数
+# `vcs_info` を毎回呼び出すことで、`vcs_info_msg_0_` の内容を最新にする
+precmd () { vcs_info }
+# プロンプトカスタマイズ
+PROMPT='
+%F{cyan}%~%f %(?..%F{red}[✗] %f)$vcs_info_msg_0_
+%F{yellow}$%f '
+
+#
+# Keybind
+#
 bindkey -M viins '\er' history-incremental-pattern-search-forward
 bindkey -M viins '^?'  backward-delete-char
 bindkey -M viins '^A'  beginning-of-line
@@ -181,19 +154,3 @@ bindkey -M viins '^R'  history-incremental-pattern-search-backward
 bindkey -M viins '^U'  backward-kill-line
 bindkey -M viins '^W'  backward-kill-word
 bindkey -M viins '^Y'  yank
-# Helper function
-# use bindkey -l
-has_keymap() {
-    if [[ -z $1 ]]; then
-        return 1
-    fi
-    bindkey -l "$1" >/dev/null 2>&1
-    return $?
-}
-# Easy to escape
-bindkey -M viins 'jj' vi-cmd-mode
-has_keymap "vivis" && bindkey -M vivis 'jj' vi-visual-exit
-# Make more vim-like behaviors
-bindkey -M vicmd 'gg' beginning-of-line
-bindkey -M vicmd 'G'  end-of-line
-
